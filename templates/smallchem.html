@@ -1,0 +1,33 @@
+<div ng-if="answered == false">
+        <img class="chem" src="{{ img }}" />
+
+
+</div>
+
+<div ng-if="answered == true">
+
+    <div ng-if="id == right">
+
+
+
+        <!-- <div class="img-overlay-green"> -->
+         <img class="chemok" ng-src="{{ img }}"  />
+         <div ng-if="id == idclicked"
+          <p>Excellent ! </p>
+        </div>
+        <!-- </div> -->
+
+    </div>
+
+    <div ng-if="id != right">
+        <div ng-if="id == idclicked">
+            <img class="chemwrong" src="{{ img }}"/>
+            <p>wrong :-( </p>
+        </div>
+
+        <div ng-if="id != idclicked">
+             <img class="chem" ng-src="{{ img }}" />
+        </div>
+    </div>
+
+</div>

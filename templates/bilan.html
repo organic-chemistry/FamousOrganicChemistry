@@ -1,0 +1,22 @@
+<ion-view title="Finished" hide-back-button="true">
+    <ion-content overflow-scroll="true" padding="true" class="has-header">
+        <h3> You finished the synthesis of {{  quizzes.data[quizzid].quizz_title }} </h2>
+        <p> You have {{ goodanswers(quizzes,quizzid) }} good answer on {{ quizzes.data[quizzid].cards.length }}
+        questions !
+
+        <ion-list>
+            <ion-item class="item" ui-sref="menu.home">
+                Back home !
+            </ion-item>
+        </ion-list>
+        <p align="center">
+          <img class="bigchemend" ng-src="{{ quizzes.data[quizzid].cards[quizzes.data[quizzid].cards.length-1].possibilities[quizzes.data[quizzid].cards[quizzes.data[quizzid].cards.length-1].solution] }}"/>
+         </p>
+        <div ng-if="quizzes.data[quizzid].quizz_info_2 != false">
+          <h4 style="text-align:center"> {{  quizzes.data[quizzid].quizz_info_2 }} </h4>
+        </div>
+
+
+    </ion-content>
+
+</ion-view>

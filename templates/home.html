@@ -1,0 +1,27 @@
+<ion-view title="Home of chemistry" hide-back-button="true">
+    <ion-content overflow-scroll="true" padding="true"  class="has-header">
+      <!-- class="has-header" -->
+        <h4 style=" text-align: center;"> Choose the molecule you want to synthesize and then at every step choose
+          the right product! </h4>
+        <ion-list>
+            <div ng-repeat="quiz in quizzes.data" >
+              <ion-item  class="item item-avatar" ui-sref="menu.quizz({ quizzid: $index})" ng-click="resetHist()">
+<img  style="clip-path: inset(5px 5px 5px 5px); max-width: 72px;max-height: 72px; top: 0px" ng-src="{{ quiz.cards[quiz.cards.length-1].possibilities[quiz.cards[quiz.cards.length-1].solution] }}"/>
+                    <div > {{update_n_quizzes(quizzes)}} </div>
+                    <h3>Synthesis of {{quiz.quizz_title}} </h3>
+                    <p>
+                    <div ng-if="Done($index)"  style="text-align:center" >
+                        stats : {{ get_answer($index)}}/{{ get_ncard($index)}}
+                    </div>
+                   <div ng-if="Done($index) == false"  style="text-align:center">
+                     {{quiz.cards.length}} steps
+                   </div>
+                 </p>
+
+
+              </ion-item>
+            </div>
+
+        </ion-list>
+    </ion-content>
+</ion-view>

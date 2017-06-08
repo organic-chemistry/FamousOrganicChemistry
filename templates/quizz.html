@@ -1,0 +1,18 @@
+<ion-view title="Synthesis">
+    <ion-content overflow-scroll="true" padding="true" class="has-header">
+        <h3 style="text-align:center"> Welcome to the synthesis of {{  quizzes.data[quizzid].quizz_title }} </h2>
+
+          <div ng-if="quizzes.data[quizzid].quizz_info_1 != false">
+            <h5 style="text-align:center"> {{  quizzes.data[quizzid].quizz_info_1 }} </h5>
+          </div>
+        <ion-list>
+            <ion-item class="item" ui-sref="menu.cart({ quizzid: quizzid , cardid : 0, goodanswer: 0})">
+                Start the synthesis
+            </ion-item>
+        </ion-list>
+        <p align="center">
+          <img class="bigchemend" ng-src="{{ quizzes.data[quizzid].cards[quizzes.data[quizzid].cards.length-1].possibilities[quizzes.data[quizzid].cards[quizzes.data[quizzid].cards.length-1].solution] }}"/>
+         </p>
+
+    </ion-content>
+</ion-view>
