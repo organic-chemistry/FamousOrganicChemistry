@@ -8,26 +8,54 @@
 
     <div ng-if="id == right">
 
-
-
         <!-- <div class="img-overlay-green"> -->
-         <img class="chemok" ng-src="{{ img }}"  />
-         <div ng-if="id == idclicked"
-          <p>Excellent ! </p>
-        </div>
+
+         <div ng-if="platform != 'android'">
+
+             <img class="chemok" ng-src="{{ img }}"  />
+             <div ng-if="id == idclicked"
+              <p>Excellent !</p>
+            </div>
+         </div>
+
+         <div ng-if="platform == 'android'">
+           <div class="img-overlay-green">
+             <img class="chem" ng-src="{{ img }}"  />
+           </div>
+         </div>
         <!-- </div> -->
 
     </div>
 
     <div ng-if="id != right">
-        <div ng-if="id == idclicked">
-            <img class="chemwrong" src="{{ img }}"/>
-            <p>wrong :-( </p>
+
+        <div ng-if="platform != 'android'">
+            <div ng-if="id == idclicked">
+                <img class="chemwrong" src="{{ img }}"/>
+                <p>wrong :-( </p>
+            </div>
+
+            <div ng-if="id != idclicked">
+                 <img class="chem" ng-src="{{ img }}" />
+            </div>
         </div>
 
-        <div ng-if="id != idclicked">
-             <img class="chem" ng-src="{{ img }}" />
+
+        <div ng-if="platform == 'android'">
+            <div ng-if="id == idclicked">
+               <div class="img-overlay-red">
+                <img class="chem" src="{{ img }}"/>
+
+              </div>
+            </div>
+
+            <div ng-if="id != idclicked">
+                 <img class="chem" ng-src="{{ img }}" />
+            </div>
         </div>
+
+
+
     </div>
 
 </div>

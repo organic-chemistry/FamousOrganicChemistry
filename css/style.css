@@ -86,6 +86,7 @@ z-index: 1000;
 {
     position: relative;
     background-color: red;
+    float :left;
 
 }
 
