@@ -23,6 +23,7 @@ angular.module('app.services', [])
     udata[8] = $http.get('data/quizz010_vitamin_A/data.json').success(function(response){console.log("response",response);data[8]=response})
     udata[9] = $http.get('data/quizz011_colchicine/data.json').success(function(response){console.log("response",response);data[9]=response})
     udata[10] = $http.get('data/quizz012_Cubane/data.json').success(function(response){console.log("response",response);data[10]=response})
+    udata[11] = $http.get('data/quizz013_caffeine/data.json').success(function(response){console.log("response",response);data[11]=response})
 
     console.log("data",data)
 

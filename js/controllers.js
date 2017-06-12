@@ -97,6 +97,15 @@ angular.module('app.controllers', ['ionic.utils'])
     $scope.quizzes = quizzes ;
     $scope.answered= false;
     $scope.idclicked=0;
+    $scope.rand = Math.random();
+    if ($scope.rand > 0.5){
+        $scope.rand = true;
+    }
+    else {
+        $scope.rand = false;
+    }
+
+
 
     //$ionicHistory.clearHistory() ;
     $scope.isItTrue = function( index , solution){
