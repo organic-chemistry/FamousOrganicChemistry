@@ -1,15 +1,33 @@
 angular.module('app.controllers', ['ionic.utils'])
 
+
+
 .controller('homeCtrl', function($scope,$localstorage, quizzes) {
 
 
     $scope.quizzes = quizzes ;
+    $scope.mol = 'All';
+    $scope.options = ['All','Medicinal','Geometrical','Vital'];
 
     $scope.clean_local = function (quizzes){
 
     var quizzesdata = $localstorage.getObject("quizzesdata", []);
     $localstorage.setObject("quizzesdata",quizzesdata);
     }
+
+    $scope.test = function(mol){
+        $localstorage.setObject("mselect",mol);
+    }
+    
+    $scope.select = function (quiz) {
+      mol = $localstorage.getObject("mselect","All");
+      if (quiz.type.indexOf(mol) >= 0 )
+        return 1;
+    }
+    //
+    //       return true;
+    //
+    // }
 
     $scope.update_n_quizzes = function (quizzes){
 

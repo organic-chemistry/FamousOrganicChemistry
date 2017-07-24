@@ -1,12 +1,34 @@
-<ion-view title="Home of chemistry" hide-back-button="true">
+<ion-view title="Syntheses" hide-back-button="true">
+
+    <ion-nav-buttons side="right">
+      <select class="button " ng-model="mol" ng-options="value as value for value in options" ng-change="test(mol,$scope)"></select>
+    </ion-nav-buttons>
+
+
     <ion-content overflow-scroll="true" padding="true"  class="has-header">
       <!-- class="has-header" -->
+
+<!--
+          <div class="list">
+            <label class="item item-input item-select">
+              <div class="input-label">
+                Molecules shown
+              </div>
+              <select ng-model="mol" ng-options="value as value for value in options" ng-default='all'></select>
+
+            </label>
+        </div> -->
         <h4 style=" text-align: center;"> Choose the molecule you want to synthesize and then at every step choose
           the right product! </h4>
+
+
         <ion-list>
             <div ng-repeat="quiz in quizzes.data" >
+              <div ng-if=select(quiz,mol) >
               <ion-item  class="item item-avatar" ui-sref="menu.quizz({ quizzid: $index})" ng-click="resetHist()">
 <img  style="clip-path: inset(5px 5px 5px 5px); max-width: 72px;max-height: 72px; top: 0px" ng-src="{{ quiz.cards[quiz.cards.length-1].possibilities[quiz.cards[quiz.cards.length-1].solution] }}"/>
+<!-- <img  style="clip-path: inset(5px 5px 5px 5px); max-width: 72px;max-height: 72px; top: 0px" ng-src="{{ quiz.animated }}"/> -->
+
                     <div > {{update_n_quizzes(quizzes)}} </div>
                     <h3>Synthesis of {{quiz.quizz_title}} </h3>
                     <p>
@@ -20,6 +42,7 @@
 
 
               </ion-item>
+              <div>
             </div>
 
         </ion-list>

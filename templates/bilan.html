@@ -10,7 +10,9 @@
             </ion-item>
         </ion-list>
         <p align="center">
-          <img class="bigchemend" ng-src="{{ quizzes.data[quizzid].cards[quizzes.data[quizzid].cards.length-1].possibilities[quizzes.data[quizzid].cards[quizzes.data[quizzid].cards.length-1].solution] }}"/>
+          <!-- <img class="bigchemend" ng-src="{{ quizzes.data[quizzid].cards[quizzes.data[quizzid].cards.length-1].possibilities[quizzes.data[quizzid].cards[quizzes.data[quizzid].cards.length-1].solution] }}"/> -->
+          <img class="bigchemend" ng-src="{{ quizzes.data[quizzid].animated}}"/>
+
          </p>
         <div ng-if="quizzes.data[quizzid].quizz_info_2 != false">
           <h4 style="text-align:center"> {{  quizzes.data[quizzid].quizz_info_2 }} </h4>

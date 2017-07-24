@@ -16,7 +16,7 @@ angular.module('app.directives', [])
 
     link: function(scope, element, attrs) {
           scope.clicked = false
-          scope.platform = "androido"
+          scope.platform = "firefox"
           },
   };
 });

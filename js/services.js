@@ -24,6 +24,16 @@ angular.module('app.services', [])
     udata[9] = $http.get('data/quizz011_colchicine/data.json').success(function(response){console.log("response",response);data[9]=response})
     udata[10] = $http.get('data/quizz012_Cubane/data.json').success(function(response){console.log("response",response);data[10]=response})
     udata[11] = $http.get('data/quizz013_caffeine/data.json').success(function(response){console.log("response",response);data[11]=response})
+    udata[12] = $http.get('data/quizz014_THC/data.json').success(function(response){console.log("response",response);data[12]=response})
+    udata[13] = $http.get('data/quizz007_morphine/data.json').success(function(response){console.log("response",response);data[13]=response})
+    udata[14] = $http.get('data/quizz015_epibatidine/data.json').success(function(response){console.log("response",response);data[14]=response})
+    udata[15] = $http.get('data/quizz016_tamiflu/data.json').success(function(response){console.log("response",response);data[15]=response})
+    udata[16] = $http.get('data/quizz017_donepezil/data.json').success(function(response){console.log("response",response);data[16]=response})
+    udata[16] = $http.get('data/quizz018_artemisinin/data.json').success(function(response){console.log("response",response);data[17]=response})
+    udata[17] = $http.get('data/quizz019_ventolin/data.json').success(function(response){console.log("response",response);data[18]=response})
+
+
+
 
     console.log("data",data)
 
@@ -36,6 +46,13 @@ angular.module('app.services', [])
 
 }])
 
+
+.factory('mselect', ['$http',function($http){
+  var mol ="All";
+    return { mol
+            };
+
+}])
 
 .service('BlankService', [function(){
 
